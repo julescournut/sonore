@@ -1,0 +1,9 @@
+<!-- Add you custom twig html here -->
+
+<ul>
+	{% for brand in brands %}
+		<li>
+			<a href="/taxonomy/term/{{ brand.tid }}">{{ brand.name }} ({{ brand.count }})</a>
+		</li>
+	{% endfor %}
+</ul>

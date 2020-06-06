@@ -1,0 +1,5 @@
+name: 'connection_header'
+type: module
+description: 'Module de connexion utilisateur à placer dans le header'
+core: 8.x
+package: 'Custom'

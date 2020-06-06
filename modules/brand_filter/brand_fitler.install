@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ *
+ */
+
+use \Drupal\Core\Database\Database;
+
+function brand_filter_schema() {
+  $schema['table_brand_filter'] = [
+    'description' => 'Members informations',
+    'fields' => [],
+    'primary key' => ['id'],
+  ];
+
+  $schema['table_brand_filter']['fields']['id'] = [
+    'description' => 'ID',
+    'type' => 'serial',
+    'not null' => TRUE,
+    'unsigned' => TRUE,
+  ];
+
+  $schema['table_brand_filter']['fields']['uid'] = [
+    'description' => 'Drupal ID',
+    'type' => 'int',
+    'not null' => TRUE,
+    'unsigned' => TRUE,
+  ];
+
+  $schema['table_brand_filter']['fields']['mail'] = [
+    'type' => 'varchar',
+    'length' => 255,
+  ];
+  return $schema;
+}
+
+
+function brand_filter_install() {
+  Database::setActiveConnection('table_brand_filter');
+  $schema = brand_filter_schema();
+  foreach ($schema as $name => $table) {
+    Database::getConnection()->schema()->createTable($name, $table);
+  }
+  Database::setActiveConnection();
+}
+
+function brand_filter_uninstall() {
+  Database::setActiveConnection('table_brand_filter');
+  $schema = brand_filter_schema();
+  foreach ($schema as $name => $table) {
+    Database::getConnection()->schema()->dropTable($name);
+  }
+  Database::setActiveConnection();
+}

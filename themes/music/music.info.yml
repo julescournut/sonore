@@ -1,0 +1,15 @@
+name: Music
+type: theme
+core: 8.x
+libraries:
+  - music/global-styling-and-scripts
+
+regions:
+  header: Header
+  subheader: 'Sub-Header'
+  featured_top: 'Featured top'
+  content: Content
+  sidebar_first: 'Sidebar first'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'

@@ -1,0 +1,6 @@
+monmodule:
+  path: /monmodule
+  defaults:
+    _controller: 'Drupal\monmodule\Controller\MonModuleController::hello'
+  requirements:
+    _permission: 'access content'

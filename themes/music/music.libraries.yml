@@ -1,0 +1,13 @@
+global-styling-and-scripts:
+  version: VERSION
+  css:
+    theme:
+      css/bootstrap/bootstrap.css: {}
+      css/font-awesome.min.css: {}
+      css/style.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.ui.effects.core
+  js:
+    js/bootstrap/bootstrap.min.js: {}
+    js/custom.js: {}
